@@ -1,89 +1,68 @@
+# 🗨️ Connexus — Real-Time Chat & Social Platform  
 
-# Sandesha Chat Application
+![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
+![Django](https://img.shields.io/badge/Django-5.0-green.svg)
+![React](https://img.shields.io/badge/React-18.0-blue.svg)
+![Database](https://img.shields.io/badge/Database-MySQL-lightblue.svg).
 
-Sandesha is a real-time chat application developed using Django Channels, WebRTC, Django Rest Framework, React, MySQL, and AES encryption. It provides users with a seamless and secure platform for one-on-one messaging, group chats, video calls, and social interactions.
+---
 
+### 💬 Overview
 
+**Connexus** is a **real-time communication and social networking platform** built using  
+**Django Channels**, **WebRTC**, **React**, **MySQL**, and **AES Encryption**.  
+It offers **instant messaging, group chats, video calls**, and a **social feed**, ensuring both performance and security.
 
+---
 
-## Features
+## 🚀 Tech Stack
 
-- #### Real-time Messaging:
-Instant messaging using Django Channels for a smooth communication experience.
+### 🧠 Backend
+- **Django** — core web framework  
+- **Django Channels** — real-time WebSocket communication  
+- **Django REST Framework (DRF)** — API management  
+- **MySQL** — structured and scalable data storage  
+- **AES Encryption** — ensures secure and private messaging  
+- **SMTP Protocol** — sends welcome emails to new users  
 
-- #### Video Calls:
-WebRTC integration enables high-quality video calls directly within the app.
-- #### One-on-One Chats:
-Private conversations between users for confidential communication.
-- #### Social Feed:
-Users can post pictures, like, comment, and delete posts on the feed page.
-- #### Welcome Emails:
-Automated welcome emails sent to new users using the SMTP protocol.
-- #### End-to-End Encryption:
-AES algorithm ensures secure and private messaging.
-- #### MySQL Database:
-Efficient data storage and management with MySQL.
-- #### Django Rest Framework:
-Backend infrastructure built using DRF for robust API development
-- #### React UI:
-Responsive and intuitive user interface developed with React.
+### 💻 Frontend
+- **React.js** — responsive and dynamic user interface  
+- **WebRTC** — peer-to-peer video calls  
+- **MDB React UI Kit** — elegant UI components and layout  
 
+---
 
-## Run Locally
+## ✨ Features
 
-Clone the project
+| Feature | Description |
+|----------|-------------|
+| 💬 **Real-Time Messaging** | Chat instantly with users via WebSockets |
+| 🎥 **Video Calls** | Peer-to-peer video calls using WebRTC |
+| 👥 **Group & Private Chats** | One-on-one or group messaging support |
+| 🖼️ **Social Feed** | Post, like, comment, and delete posts |
+| 🔐 **End-to-End Encryption** | AES-based secure message exchange |
+| 📧 **Welcome Emails** | Automated SMTP emails to new users |
+| 🧩 **Secure Auth System** | Token & session-based authentication |
+| ⚙️ **Django REST Framework APIs** | Structured, RESTful backend endpoints |
+| 🪄 **Modern UI** | Clean React-based responsive interface |
 
-```bash
-git clone --recursive https://github.com/fadingreality1/sandesha.git
-```
+---
 
-Go to the project server directory
+## ⚙️ Installation & Setup
 
-```bash
-cd "sandesha/server"
-pip install -r requirements.txt
-python manage.py migrate
-python manage.py runserver 7890
-```
+### 🧩 Clone the Repository
+    ```bash
+    git clone --recursive https://github.com/fadingreality1/connexus.git
+### 🐍 Backend Setup (Django)
+      ```bash
+      cd connexus/server
+     pip install -r requirements.txt
+    python manage.py migrate
+    python manage.py runserver 7890
 
-Go to the project client directory
-
-```bash
-cd ..
-cd client
-npm install
-npm start
-```
-
-## Usage/Examples
-
-- Access the application at http://localhost:8000/.
-- Create an account or log in if you already have one.
-- Explore the chat features, social feed, and video calling functionality.
-
-
-## Screenshots
-
-![image](https://github.com/fadingreality1/Lazy_coder/assets/114291201/41f53f38-eeee-4ba8-9ff0-486b56da6553)
-
-![image](https://github.com/fadingreality1/Lazy_coder/assets/114291201/68562974-45b2-4813-9ca3-ab5c4d5b2f6b)
-
-![image](https://github.com/fadingreality1/Lazy_coder/assets/114291201/d7490213-5533-4151-a07f-e059ccc275ff)
-
-![image](https://github.com/fadingreality1/Lazy_coder/assets/114291201/6b92faf0-90d1-4eee-a676-48980a6cbb31)
-
-![image](https://github.com/fadingreality1/Lazy_coder/assets/114291201/1f93e482-e0ab-4398-ae1f-d82916afbfd5)
-
-![image](https://github.com/fadingreality1/Lazy_coder/assets/114291201/41f53f38-eeee-4ba8-9ff0-486b56da6553)
-
-![image](https://github.com/fadingreality1/Lazy_coder/assets/114291201/6facf0e6-5912-4252-b317-ce3a3fe51dab)
-## Contributing
-
-Contributions are welcome! Please fork the repository and submit a pull request with your enhancements.
-
-
-## Authors
-
-- [Kunal Verma](https://github.com/fadingreality1)
-- [Aman Kumar srivastava](https://github.com/Aman1807-coder)
-
+### ⚛️ Frontend Setup (React)
+    ```bash
+    cd ..
+    cd client
+    npm install
+    npm start
