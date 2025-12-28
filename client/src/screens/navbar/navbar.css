@@ -1,0 +1,390 @@
+/* ===========================
+   🎯 NAVBAR BASE
+   =========================== */
+.cx-navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: rgba(10, 10, 15, 0.8);
+  backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.cx-navbar-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+/* ===========================
+   🏷️ LOGO
+   =========================== */
+.cx-navbar-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  z-index: 1001;
+}
+
+.cx-logo-img {
+  height: 45px;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.cx-navbar-logo:hover .cx-logo-img {
+  transform: scale(1.05);
+}
+
+/* ===========================
+   🍔 MOBILE TOGGLE
+   =========================== */
+.cx-navbar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1001;
+}
+
+.cx-hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 28px;
+}
+
+.cx-hamburger span {
+  display: block;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.cx-hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.cx-hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.cx-hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* ===========================
+   📋 MENU
+   =========================== */
+.cx-navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex: 1;
+  justify-content: space-between;
+  margin-left: 3rem;
+}
+
+/* ===========================
+   🔗 NAV LINKS
+   =========================== */
+.cx-nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+}
+
+.cx-nav-item {
+  position: relative;
+}
+
+.cx-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.cx-nav-link svg {
+  transition: transform 0.3s ease;
+}
+
+.cx-nav-link:hover {
+  color: #fff;
+  background: rgba(99, 102, 241, 0.1);
+}
+
+.cx-nav-link:hover svg {
+  transform: translateY(-2px);
+}
+
+.cx-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  transition: width 0.3s ease;
+}
+
+.cx-nav-link:hover::after {
+  width: 60%;
+}
+
+/* ===========================
+   👤 USER SECTION
+   =========================== */
+.cx-navbar-user {
+  display: flex;
+  align-items: center;
+}
+
+.cx-user-profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.cx-user-profile:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(99, 102, 241, 0.3);
+}
+
+.cx-user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cx-user-avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(99, 102, 241, 0.5);
+  transition: all 0.3s ease;
+}
+
+.cx-user-profile:hover .cx-user-avatar {
+  border-color: #6366f1;
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+}
+
+.cx-user-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cx-user-name {
+  color: #f1f5f9;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.cx-user-status {
+  color: #10b981;
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.cx-user-status::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: #10b981;
+  border-radius: 50%;
+  animation: pulse-status 2s infinite;
+}
+
+@keyframes pulse-status {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  50% {
+    opacity: 0.8;
+    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0);
+  }
+}
+
+/* ===========================
+   🔘 BUTTONS
+   =========================== */
+.cx-logout-btn,
+.cx-login-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.cx-logout-btn {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.cx-logout-btn:hover {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: #ef4444;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.cx-login-btn {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: #fff;
+  border: 1px solid transparent;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.cx-login-btn:hover {
+  background: linear-gradient(135deg, #7c3aed, #a855f7);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+}
+
+/* ===========================
+   📱 RESPONSIVE
+   =========================== */
+@media (max-width: 968px) {
+  .cx-navbar-container {
+    padding: 0 1.5rem;
+  }
+
+  .cx-navbar-toggle {
+    display: block;
+  }
+
+  .cx-navbar-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100vh;
+    background: rgba(10, 10, 15, 0.98);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 100px 2rem 2rem;
+    margin: 0;
+    gap: 2rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+  }
+
+  .cx-navbar-menu.active {
+    right: 0;
+  }
+
+  .cx-nav-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .cx-nav-link {
+    width: 100%;
+    padding: 14px 16px;
+    justify-content: flex-start;
+  }
+
+  .cx-navbar-user {
+    width: 100%;
+    margin-top: auto;
+  }
+
+  .cx-user-profile {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .cx-user-info {
+    width: 100%;
+  }
+
+  .cx-logout-btn,
+  .cx-login-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .cx-navbar-container {
+    height: 70px;
+    padding: 0 1rem;
+  }
+
+  .cx-logo-img {
+    height: 38px;
+  }
+
+  .cx-navbar-menu {
+    width: 280px;
+  }
+
+  .cx-user-name {
+    font-size: 13px;
+  }
+
+  .cx-user-avatar {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* ===========================
+   🎨 SCROLL EFFECT
+   =========================== */
+.cx-navbar.scrolled {
+  background: rgba(10, 10, 15, 0.95);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* Optional: Add this class via JS when scrolling */

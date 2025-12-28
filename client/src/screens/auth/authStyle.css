@@ -1,4 +1,4 @@
-#authFormContainer {
+/* #authFormContainer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,4 +49,500 @@
   color: #856404;
   background-color: #fff3cd;
   border-color: #ffeeba;
+} */
+
+
+/* ===========================
+   🌈 PAGE BACKGROUND
+   =========================== */
+.cx-auth-page {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    #0a0a0f 0%,
+    #1a1a2e 50%,
+    #16213e 100%
+  );
+}
+
+/* Animated gradient orbs */
+.cx-auth-bg-blur {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  filter: blur(140px);
+  opacity: 0.35;
+  animation: float 12s infinite ease-in-out;
+  z-index: 0;
+}
+
+.cx-auth-bg-blur-left {
+  left: -15%;
+  top: 15%;
+}
+
+.cx-auth-bg-blur-right {
+  right: -15%;
+  bottom: 15%;
+  background: linear-gradient(135deg, #ec4899, #f43f5e);
+  animation-delay: -6s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -30px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+}
+
+/* ===========================
+   📦 AUTH CARD
+   =========================== */
+.cx-auth-card {
+  position: relative;
+  width: 440px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 50px 45px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px) saturate(180%);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.05) inset,
+    0 0 100px rgba(99, 102, 241, 0.1);
+  z-index: 2;
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.3s ease;
+}
+
+.cx-auth-card::-webkit-scrollbar {
+  width: 6px;
+}
+
+.cx-auth-card::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 10px;
+}
+
+.cx-auth-card::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.3);
+  border-radius: 10px;
+}
+
+.cx-auth-card::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.5);
+}
+
+.cx-auth-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.1), 
+    transparent
+  );
+}
+
+@keyframes fadeUp {
+  from { 
+    transform: translateY(30px); 
+    opacity: 0;
+    filter: blur(10px);
+  }
+  to { 
+    transform: translateY(0px); 
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+/* ===========================
+   ⭐ BRAND HEADER
+   =========================== */
+.cx-auth-header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.cx-logo-circle {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 15px;
+  position: relative;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cx-logo-dot {
+  width: 10px;
+  height: 10px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border-radius: 50%;
+  position: absolute;
+  animation: pulse 2.5s infinite ease-in-out;
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.6);
+}
+
+.cx-logo-dot-1 { top: 12px; left: 30px; }
+.cx-logo-dot-2 { top: 30px; right: 12px; animation-delay: .4s; }
+.cx-logo-dot-3 { bottom: 12px; left: 30px; animation-delay: .8s; }
+
+@keyframes pulse {
+  0%, 100% { 
+    transform: scale(1); 
+    opacity: .8; 
+  }
+  50% { 
+    transform: scale(1.6); 
+    opacity: 1;
+    filter: brightness(1.3);
+  }
+}
+
+.cx-brand-title {
+  font-size: 28px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ffffff, #e0e7ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
+  margin-bottom: 8px;
+}
+
+.cx-brand-subtitle {
+  color: #94a3b8;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+
+/* ===========================
+   📝 LOGIN FORM TEXT
+   =========================== */
+.cx-auth-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  letter-spacing: -0.3px;
+}
+
+.cx-auth-subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: #94a3b8;
+  margin-bottom: 32px;
+  font-weight: 400;
+}
+
+/* ===========================
+   🔹 INPUT FIELDS
+   =========================== */
+.cx-field-group {
+  margin-bottom: 20px;
+}
+
+.cx-input-label {
+  color: #e2e8f0;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: block;
+  letter-spacing: 0.2px;
+}
+
+.cx-input-wrapper {
+  position: relative;
+}
+
+.cx-input-icon {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+  color: #64748b;
+  transition: color 0.3s ease;
+  z-index: 1;
+}
+
+.cx-input {
+  width: 100%;
+  padding: 13px 16px 13px 44px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: #f1f5f9;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 0 0 rgba(99, 102, 241, 0);
+}
+
+.cx-input::placeholder {
+  color: #475569;
+}
+
+.cx-input:focus {
+  border-color: #6366f1;
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 
+    0 0 0 3px rgba(99, 102, 241, 0.1),
+    0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.cx-input:focus ~ .cx-input-icon {
+  color: #6366f1;
+}
+
+/* Required error */
+.requiredFieldError {
+  margin: 6px 0 0 2px;
+  color: #f87171;
+  font-size: 13px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.requiredFieldError::before {
+  content: '⚠';
+  font-size: 12px;
+}
+
+/* ===========================
+   📎 FILE UPLOAD
+   =========================== */
+.cx-file-upload-wrapper {
+  position: relative;
+}
+
+.cx-file-input {
+  position: absolute;
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.cx-file-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1.5px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  color: #94a3b8;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cx-file-label:hover {
+  border-color: #6366f1;
+  background: rgba(99, 102, 241, 0.05);
+  color: #c7d2fe;
+}
+
+.cx-file-icon {
+  color: #64748b;
+  flex-shrink: 0;
+  transition: color 0.3s ease;
+}
+
+.cx-file-label:hover .cx-file-icon {
+  color: #6366f1;
+}
+
+.cx-file-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cx-file-input:focus + .cx-file-label {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* ===========================
+   🚀 SUBMIT BUTTON
+   =========================== */
+.cx-primary-btn {
+  width: 100%;
+  padding: 14px 24px;
+  margin-top: 8px;
+  border-radius: 12px !important;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  border: none;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 4px 12px rgba(99, 102, 241, 0.3),
+    0 0 0 0 rgba(99, 102, 241, 0);
+  position: relative;
+  overflow: hidden;
+}
+
+.cx-primary-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.2), 
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.cx-primary-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 20px rgba(99, 102, 241, 0.4),
+    0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.cx-primary-btn:hover:not(:disabled)::before {
+  left: 100%;
+}
+
+.cx-primary-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.cx-primary-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===========================
+   📌 LOGIN MESSAGE
+   =========================== */
+.login-message {
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  backdrop-filter: blur(10px);
+}
+
+.login-message-dot {
+  width: 8px;
+  height: 8px;
+  background: #6366f1;
+  border-radius: 50%;
+  margin-right: 12px;
+  animation: pulse 2s infinite ease-in-out;
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+}
+
+.login-message.success {
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  color: #c7d2fe;
+}
+
+/* ===========================
+   🔻 FOOTER
+   =========================== */
+.cx-auth-footer-text {
+  text-align: center;
+  color: #cbd5e1;
+  margin-top: 28px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.cx-auth-link {
+  color: #6366f1;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.cx-auth-link:hover {
+  color: #8b5cf6;
+}
+
+.cx-auth-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background: #8b5cf6;
+  transition: width 0.3s ease;
+}
+
+.cx-auth-link:hover::after {
+  width: 100%;
+}
+
+.cx-auth-footer-caption {
+  text-align: center;
+  margin-top: 16px;
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+}
+
+/* ===========================
+   📱 RESPONSIVE
+   =========================== */
+@media (max-width: 480px) {
+  .cx-auth-card {
+    width: 90%;
+    padding: 40px 30px;
+    max-height: 95vh;
+  }
+  
+  .cx-brand-title {
+    font-size: 24px;
+  }
+  
+  .cx-auth-bg-blur {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .cx-field-group {
+    margin-bottom: 16px;
+  }
 }
