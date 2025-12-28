@@ -53,15 +53,18 @@ It offers **instant messaging, group chats, video calls**, and a **social feed**
 ### 🧩 Clone the Repository
     ```bash
     git clone --recursive https://github.com/fadingreality1/connexus.git
+
+
 ### 🐍 Backend Setup (Django)
-      ```bash
-      cd connexus/server
-     pip install -r requirements.txt
+    #switch to virtual env
+
+    cd connexus/server
+    pip install -r requirements.txt
     python manage.py migrate
     python manage.py runserver 7890
 
 ### ⚛️ Frontend Setup (React)
-    ```bash
+
     cd ..
     cd client
     npm install
